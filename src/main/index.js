@@ -12,18 +12,21 @@ const url = require('url')
 let mainWindow
 
 function createWindow () {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
-
+  
+  let mainWindow = new BrowserWindow({show: false, autoHideMenuBar: true, title: "Sistema Séries", icon: __dirname + '../../../resources/icon.ico'})
+  mainWindow.maximize()
+  //mainWindow.webContents.openDevTools()
+  
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
+    pathname: path.join(__dirname, '../renderer/index.html'),
     protocol: 'file:',
     slashes: true
   }))
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools()
+  
+  mainWindow.once('ready-to-show', () => {
+	  mainWindow.show()
+  })   
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
