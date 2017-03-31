@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # serie.quick.start
 
 **Application [Sistema Séries](http://200.98.150.247:8080/series/login.xhtml), run based on the Electron API**
@@ -11,3 +12,6 @@ For more example apps, see the
 created by the awesome electron community.
 
 #### License [CC0 1.0 (Public Domain)](LICENSE.md)
+=======
+# Instalador
+>>>>>>> 5ada848697c3427b34268d02f88f9f112ab9afd3
