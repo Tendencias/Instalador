@@ -1,7 +1,9 @@
 {
   "name": "series.quick.start",
   "version": "1.0.0",
-  "description": "Sistema Séries",
+  "productName": "Sistema Series",
+  "copyright": "Tendência Consultória Integrada",
+  "description": "Executável do Sistema Séries",
   "main": ".\\src\\index.js",
   "scripts": {
     "clean": "rimraf dist",
@@ -12,7 +14,6 @@
     "set64": "electron-installer-windows --src dist/series.quick.start-win32-x64/ --dest dist/installers/x64/ --config config.json",
     "build": "npm run clean && npm run exe32 && npm run set32 && npm run exe64 && npm run set64"
   },
-  "author": "Jonatas Palumbo",
   "homepage": "https://github.com/JonatasPalumbo/series.quick.start.git",
   "repository": "https://github.com/JonatasPalumbo/series.quick.start.git",
   "author": {
