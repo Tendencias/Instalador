@@ -1,0 +1,34 @@
+{
+  "name": "series.quick.start",
+  "version": "1.0.0",
+  "productName": "Sistema Series",
+  "copyright": "Tendência Consultória Integrada",
+  "description": "Executável do Sistema Séries",
+  "main": ".\\src\\index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "electron .",
+    "exe32": "electron-packager . series.quick.start --platform win32 --arch ia32 --out dist/ --ignore \"(dist|node_modules/electron.*)\" --icon resources/Icon.ico",
+    "exe64": "electron-packager . series.quick.start --platform win32 --arch x64 --out dist/ --ignore \"(dist|node_modules/electron.*)\" --icon resources/Icon.ico",
+    "set32": "electron-installer-windows --src dist/series.quick.start-win32-ia32/ --dest dist/installers/ia32/ --config config.json",
+    "set64": "electron-installer-windows --src dist/series.quick.start-win32-x64/ --dest dist/installers/x64/ --config config.json",
+    "build": "npm run clean && npm run exe32 && npm run set32 && npm run exe64 && npm run set64"
+  },
+  "homepage": "https://github.com/Tendencias/Instalador.git",
+  "repository": "https://github.com/Tendencias/Instalador.git",
+  "author": {
+    "name": "Tendencias",
+    "email": "jpalumbo@tendencias.com.br",
+    "url": "http://www.tendencias.com.br/"
+  },
+  "devDependencies": {
+    "electron": "*",
+    "electron-installer-windows": "*",
+    "electron-packager": "*",
+    "electron-prebuilt": "*"
+  },
+  "dependencies": {
+    "electron-packager": "*",
+    "jquery": "^3.2.1"
+  }
+}
