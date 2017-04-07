@@ -3,7 +3,7 @@ const electron = require('electron')
 const app = electron.app
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
-
+	
 const path = require('path')
 const url = require('url')
 
@@ -14,10 +14,11 @@ let mainWindow
 function createWindow () {
   
   let mainWindow = new BrowserWindow({show: false, autoHideMenuBar: true, title: "Sistema Séries", icon: __dirname + '../../../resources/icon.ico'})
-  mainWindow.maximize()
+  
   //mainWindow.webContents.openDevTools()
   
   // and load the index.html of the app.
+  
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, '../renderer/index.html'),
     protocol: 'file:',
@@ -25,9 +26,10 @@ function createWindow () {
   }))
   
   mainWindow.once('ready-to-show', () => {
+	  mainWindow.maximize()
 	  mainWindow.show()
   })   
-
+  
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
